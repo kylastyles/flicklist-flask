@@ -52,14 +52,7 @@ def add_movie():
     # 'escape' the user's input so that if they typed HTML, it doesn't mess up our site
     new_movie_escaped = cgi.escape(new_movie, quote=True)
 
-    # TODO:
-    # Create a template called add-confirmation.html inside your /templates directory
-    # Use that template to render the confirmation message instead of this temporary message below
-    return "Confirmation Message Under Construction..."
-
-# TODO:
-# Modify the edit.html file to display the watchlist in an unordered list with bullets in front of each movie.
-# Put the list between "Flicklist" and "Edit My Watchlist" under this heading: <h2>My Watchlist</h2>
+    return render_template('add-confirmation.html', movie=new_movie)
 
 # TODO:
 # Change get_current_watchlist to return []. This simulates a user with an empty watchlist.
