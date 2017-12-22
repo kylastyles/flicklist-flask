@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h2>Watchlist</h2>
+<h2>My Watchlist</h2>
 {% if watchlist|length == 0 %}
 <p>No movies in Watchlist yet.</p>
 {% else %}
@@ -24,6 +24,7 @@
     <input type="submit" value="Add It"/>
 </form>
 
+{% if watchlist != [] %}
 <form action="/crossoff" method="post">
     <label>
         I want to cross off
@@ -37,7 +38,7 @@
     </label>
     <input type="submit" value="Cross It Off"/>
 </form>
-
+{% endif %}
 
 {% if error %}
   <p class='error'>{{ error }}</p>
