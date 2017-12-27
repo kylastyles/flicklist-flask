@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Movies I Have Watched</h2>
+<ul>
+{% for movie in watchlist: %}
+    <li>
+
+        <form action="/rating-confirmation" method="post">
+        <strong>{{movie}}</strong>
+        <label>My rating<select name="rating">
+            <option value="*">*</option>
+            <option value="**">**</option>
+            <option value="***">***</option>
+            <option value="****">****</option>
+            <option value="*****">*****</option>
+        </label>
+        </select>
+        <input type="submit" value="Rate it!" />
+
+        </form>
+    </li>
+
+{% endfor %}
+</ul>
+{% endblock %}
