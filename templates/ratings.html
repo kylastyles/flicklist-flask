@@ -5,9 +5,9 @@
 <ul>
 {% for movie in watchlist: %}
     <li>
-
-        <form action="/rating-confirmation" method="post">
         <strong>{{movie}}</strong>
+        <form action="/rating-confirmation" method="post">
+            <input name="movie" type="hidden" value="{{movie}}" />
         <label>My rating<select name="rating">
             <option value="*">*</option>
             <option value="**">**</option>
